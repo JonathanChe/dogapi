@@ -14,12 +14,17 @@ export const fetchFailed = error => ({
   error,
 });
 
+export const handleSearch = input => ({
+  type: types.SEARCH,
+  input,
+})
+
 export const fetchDogs = input => (dispatch) => {
   // dispatch to set loading to true while fetch is being initialized
   dispatch(requestDogs());
 
   return fetch(`https://dog.ceo/api/breed/${input}/images`)
     .then(data => data.json())
-    .then(response => dispatch(receiveDogs(response.data)))
+    .then(response => dispatch(receiveDogs(response.message.slice(0, 12))))
     .catch(err => dispatch(fetchFailed(err)));
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import * as actions from '../actions/index';
 
 const Container = styled.div`
   width: 50vw;
@@ -67,7 +69,17 @@ const CoolButton = styled.button`
   }
 `;
 
-const GettingStarted = () => {
+const mapStateToProps = state => ({
+  input: state.search,
+});
+
+const mapDispatchToProps = dispatch => ({
+  handleChange: (input) => dispatch(actions.handleSearch(input)),
+  handleSubmit: (input) => dispatch(actions.fetchDogs(input))
+});
+
+const GettingStarted = props => {
+  const { handleChange, handleSubmit, input } = props;
   return (
     <Container>
       <TextContainer>
@@ -75,12 +87,18 @@ const GettingStarted = () => {
         <p>Search for your favorite breeds!</p>
         <br />
         <SearchContainer>
-          <Search type="text" placeholder="Search.."/>
-          <CoolButton>Submit</CoolButton>
+          <Search
+            type="text"
+            placeholder="Search.."
+            onChange={(e) => handleChange(e.target.value)}
+          />
+          <CoolButton
+            onClick={() => handleSubmit(input)}
+          >Submit</CoolButton>
         </SearchContainer>
       </TextContainer>
     </Container>
   )
 };
 
-export default GettingStarted;
+export default connect(mapStateToProps, mapDispatchToProps)(GettingStarted);

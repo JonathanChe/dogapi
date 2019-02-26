@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-
 import GettingStarted from './GettingStarted';
 
 const GlobalStyles = createGlobalStyle`
@@ -19,15 +18,11 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <GlobalStyles />
-        <GettingStarted />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <GlobalStyles />
+    <GettingStarted />
+  </div>
+);
 
 export default App;

@@ -1,4 +1,4 @@
-import { REQUEST, RECEIVED, FAILED } from '../constants/index';
+import { REQUEST, RECEIVED, FAILED, SEARCH } from '../constants/index';
 
 const dogReducer = (
   state = {
@@ -10,6 +10,11 @@ const dogReducer = (
   action,
 ) => {
   switch (action.type) {
+    case SEARCH:
+      return {
+        ...state,
+        search: action.input,
+      }
     case REQUEST:
       return {
         loading: true,
@@ -17,6 +22,7 @@ const dogReducer = (
       }
     case RECEIVED:
       return {
+        ...state,
         loading: false,
         breeds: action.breeds,
       }
