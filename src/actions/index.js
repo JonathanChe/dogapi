@@ -25,6 +25,10 @@ export const fetchDogs = input => (dispatch) => {
 
   return fetch(`https://dog.ceo/api/breed/${input}/images`)
     .then(data => data.json())
-    .then(response => dispatch(receiveDogs(response.message.slice(0, 12))))
+    .then(response => {
+      (response.status === 'success')
+        ? dispatch(receiveDogs(response.message.slice(0, 12)))
+        : dispatch(fetchFailed(response.message));
+    })
     .catch(err => dispatch(fetchFailed(err)));
 }

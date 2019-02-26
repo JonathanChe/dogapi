@@ -34,6 +34,7 @@ const SearchContainer = styled.div`
 const Search = styled.input`
   height: 45px;
   width: 50%;
+  padding-left: 1%;
   background-color: transparent;
   border: solid 2px rgba(255, 255, 255, 0.35);
   border-radius: 10px;
@@ -54,7 +55,7 @@ const CoolButton = styled.button`
   width: 12.5%;
   height: 50px;
   border-radius: 10px;
-  background-color: #1cb495;
+  background-color: rgba(28, 180, 149, 1);
   border: none;
   cursor: pointer;
   margin-left: 5%;
@@ -65,7 +66,7 @@ const CoolButton = styled.button`
   }
 
   &:hover {
-    transform: scale(1.1)
+    transform: scale(1.05);
   }
 `;
 
@@ -91,6 +92,7 @@ const GettingStarted = props => {
             type="text"
             placeholder="Search.."
             onChange={(e) => handleChange(e.target.value)}
+            value={input}
           />
           <CoolButton
             onClick={() => handleSubmit(input)}

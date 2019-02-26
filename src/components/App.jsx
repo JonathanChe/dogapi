@@ -1,5 +1,6 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import Content from './Content';
 import GettingStarted from './GettingStarted';
 
 const GlobalStyles = createGlobalStyle`
@@ -18,11 +19,17 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+const AppStyles = styled.main`
+  display: flex;
+  min-height: 100vh;
+`;
+
 const App = () => (
-  <div>
+  <AppStyles>
     <GlobalStyles />
     <GettingStarted />
-  </div>
-);
+    <Content />
+  </AppStyles>
+)
 
 export default App;

@@ -1,6 +1,6 @@
-export const REQUEST = 'REQUESTING';
+export const REQUEST = 'REQUEST';
 
-export const RECEIVED = 'RECEIVING';
+export const RECEIVED = 'RECEIVED';
 
 export const FAILED = 'FAILED';
 
