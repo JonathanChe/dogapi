@@ -11,9 +11,10 @@ const dogReducer = (
 ) => {
   switch (action.type) {
     case SEARCH: {
-      console.log('testing')
       return {
         ...state,
+        error: null,
+        breeds: [],
         search: action.input,
       }
     }
@@ -36,7 +37,7 @@ const dogReducer = (
         error: action.error,
       }
       default:
-      return state;
+        return state;
   }
 };
 

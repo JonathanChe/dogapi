@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import ErrorMessage from './ErrorMessage';
+import Card from './Card';
 
 const ContentContainer = styled.div`
   width: 50vw;
@@ -15,12 +16,20 @@ const ContentContainer = styled.div`
 
 const mapStateToProps = state => ({
   error: state.error,
+  breeds: state.breeds,
 });
 
-const Content = ({ error }) => {
+const Content = ({ error, breeds }) => {
+  const displayCards = breeds.length > 0
+    ? breeds.map((img) => <Card key={img} img={img} />)
+    : undefined;
+
   return (
     <ContentContainer>
-      {error && <ErrorMessage msg={error} />}
+      {error
+        ? <ErrorMessage msg={error} />
+        : displayCards
+      }
     </ContentContainer>
   )
 };
