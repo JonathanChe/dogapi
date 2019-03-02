@@ -22,6 +22,15 @@ const GlobalStyles = createGlobalStyle`
 const AppStyles = styled.main`
   display: flex;
   min-height: 100vh;
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    width: 100vw;
+    flex-flow: column wrap;
+  }
+
+  @media only screen and (min-width: 770px) {
+    width: 100vw;
+  }
 `;
 
 const App = () => (

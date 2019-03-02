@@ -106,6 +106,7 @@ const ErrorContainer = styled.div`
   width: 100%;
   text-align: center;
   color: white;
+  list-style: none;
 
   h1 {
     font-size: 3rem;
@@ -118,6 +119,23 @@ const ErrorContainer = styled.div`
 
   li {
     font-size: 1.75rem;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 770px) {
+    height: 100%;
+    overflow: visible;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    li {
+      font-size: 1.25rem;
+    }
   }
 `;
 

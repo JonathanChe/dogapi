@@ -8,6 +8,20 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    height: 50vh;
+    width: 100vw;
+  }
+
+  @media only screen and (max-width: 320px) {
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 33vh;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -25,10 +39,29 @@ const TextContainer = styled.div`
     color: lightgray;
     font-size: 2.5rem;
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 5%;
+      color: white;
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const SearchContainer = styled.div`
   display: flex;
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    flex-flow: column wrap;
+    align-content: center;
+  }
 `;
 
 const Search = styled.input`
@@ -49,6 +82,15 @@ const Search = styled.input`
     padding-left: 1%;
     color: white;
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    width: 80%;
+    text-align: center;
+
+    &::-webkit-input-placeholder {
+      text-align: center;
+    }
+  }
 `;
 
 const CoolButton = styled.button`
@@ -67,6 +109,13 @@ const CoolButton = styled.button`
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    align-self: center;
+    margin-top: 15px;
+    margin-left: 0;
+    width: 50%;
   }
 `;
 

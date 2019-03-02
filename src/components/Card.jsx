@@ -18,6 +18,10 @@ const CardContainer = styled.div`
   &:hover {
     transform: scale(1.1);
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    
+  }
 `;
 
 const Card = ({ img }) => (
