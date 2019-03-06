@@ -53,6 +53,16 @@ const TextContainer = styled.div`
       font-size: 1.5rem;
     }
   }
+
+  @media only screen and (min-width: 770px) and (max-width: 1296px) {
+    h1 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 2rem;
+    }
+  }
 `;
 
 const SearchContainer = styled.div`
@@ -116,6 +126,10 @@ const CoolButton = styled.button`
     margin-top: 15px;
     margin-left: 0;
     width: 50%;
+  }
+
+  @media only screen and (min-width: 770px) and (max-width: 1296px) {
+    width: 25%;
   }
 `;
 

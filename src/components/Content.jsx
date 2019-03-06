@@ -19,6 +19,9 @@ const ContentContainer = styled.div`
 
   @media only screen and (min-width: 770px) {
     height: 100vh;
+    width: 50vw;
+    padding: 1%;
+    overflow: scroll;
   }
 `;
 
